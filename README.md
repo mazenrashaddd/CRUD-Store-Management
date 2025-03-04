@@ -1,4 +1,4 @@
-# CRUD-Store-Management
+# CRUD Store Management
 
 A one-page React application that provides a fully functional store management system with CRUD operations (Create, Read, Update, Delete). Users can seamlessly add, edit, and delete products, ensuring efficient inventory management.
 
