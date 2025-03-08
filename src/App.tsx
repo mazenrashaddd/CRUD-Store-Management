@@ -1,35 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import ProductCard from "./components/ProductCard";
+import { productList } from "./data";
+import Button from "./components/ui/Button"
 
-function App() {
-  const [count, setCount] = useState(0)
+interface IProps {}
 
+const App = ({}: IProps) => {
+  // Renders
+  const renderProductList = productList.map((product) => {
+    return <ProductCard key={product.id} product={product} />;
+  });
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <main className="flex-col container mx-auto my-5">
+      <div className="mx-3 flex justify-between items-center">
+        <h1 className="font-bold font-sans text-3xl md:text-5xl">
+          Product <span className="text-indigo-600">Inventory</span>
+        </h1>
+        <Button className="bg-indigo-600 max-w-30 md:max-w-50 md:py-2 w-full">Add Product</Button>
       </div>
-      <h1 className='text-3xl font-bold'>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 my-6 mx-3">
+        {renderProductList}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    </main>
+  );
+};
 
-export default App
+export default App;
