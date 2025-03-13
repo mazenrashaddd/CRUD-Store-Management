@@ -229,7 +229,7 @@ export const formInputList: IFormInput[] = [
   },
   {
     id: "imageUrl",
-    name: "imageUrl",
+    name: "imageURL",
     label: "Product Image URL",
     type: "text",
   },

@@ -4,7 +4,7 @@ import { productList, formInputList } from "./data";
 import Button from "./components/ui/Button";
 import Modal from "./components/ui/Modal";
 import Input from "./components/ui/input";
-import { Description } from "@headlessui/react";
+// import { Description } from "@headlessui/react";
 import { IProduct } from "./interfaces";
 
 interface IProps {}
@@ -44,11 +44,13 @@ const App = ({}: IProps) => {
         <label htmlFor={id} className="text-md my-1">
           {label}
         </label>
-        <Input id={id} name={name} type={type} onChange={onChangeHandler} />
+        <Input id={id} name={name} type={type} value={product[name]} onChange={onChangeHandler} />
         {/* <input className="border rounded-sm border-gray-300" type={type} name={name} id={id} /> */}
       </div>
     );
   });
+
+console.log(product)
 
   return (
     <main className="flex-col container mx-auto my-5">
