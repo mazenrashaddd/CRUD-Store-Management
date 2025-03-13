@@ -1,5 +1,5 @@
 import { v4 as uuidv4 } from "uuid";
-import { IProduct } from "../interfaces/index";
+import { IFormInput, IProduct } from "../interfaces/index";
 
 export const productList: IProduct[] = [
   {
@@ -211,5 +211,32 @@ export const productList: IProduct[] = [
       imageURL:
         "https://atlas-content-cdn.pixelsquid.com/assets_v2/345/3459683153294137080/previews/G03-200x200.jpg",
     },
+  },
+];
+
+export const formInputList: IFormInput[] = [
+  {
+    id: "title",
+    name: "title",
+    label: "Product Title",
+    type: "text",
+  },
+  {
+    id: "description",
+    name: "description",
+    label: "Product Description",
+    type: "text",
+  },
+  {
+    id: "imageUrl",
+    name: "imageUrl",
+    label: "Product Image URL",
+    type: "text",
+  },
+  {
+    id: "price",
+    name: "price",
+    label: "Product Price",
+    type: "number",
   },
 ];

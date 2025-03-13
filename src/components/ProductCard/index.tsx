@@ -8,7 +8,7 @@ interface IProps {
 }
 
 const ProductCard = ({ product }: IProps) => {
-  const {title, description, imageURL, price, category} = product
+  const { title, description, imageURL, price, category } = product;
   return (
     <div className="border rounded-md p-2 flex-col">
       <Image
@@ -17,10 +17,10 @@ const ProductCard = ({ product }: IProps) => {
         className="w-full rounded-md h-60 object-cover object-center"
       />
 
-      <h3 className="text-md font-semibold from-neutral-800 my-1 md:my-2">{title}</h3>
-      <p className="text-zinc-950">
-        {textSlicer(description)}
-      </p>
+      <h3 className="text-md font-semibold from-neutral-800 my-1 md:my-2">
+        {title}
+      </h3>
+      <p className="text-zinc-950">{textSlicer(description)}</p>
       <div className="flex items-center space-x-2 my-3">
         <span className="w-5 h-5 bg-indigo-600 rounded-full inline-block cursor-pointer" />
         <span className="w-5 h-5 bg-blue-600 rounded-full inline-block cursor-pointer" />
