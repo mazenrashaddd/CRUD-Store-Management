@@ -1,24 +1,37 @@
-import { useState } from "react";
+import { ChangeEvent, useState } from "react";
 import ProductCard from "./components/ProductCard";
 import { productList, formInputList } from "./data";
 import Button from "./components/ui/Button";
 import Modal from "./components/ui/Modal";
 import Input from "./components/ui/input";
+import { Description } from "@headlessui/react";
+import { IProduct } from "./interfaces";
 
 interface IProps {}
 
 const App = ({}: IProps) => {
   /* ----------STATES---------- */
   const [isOpen, setIsOpen] = useState(false);
+  const [product, setProduct] = useState<IProduct>({
+    title: "",
+    description: "",
+    imageURL: "",
+    price: "",
+    colors: [],
+    category: {
+      name: "",
+      imageURL: ""
+    }
+  });
 
   /* ----------HANDLERS---------- */
-  function closeModal() {
-    setIsOpen(false);
-  }
 
-  function openModal() {
-    setIsOpen(true);
-  }
+  const closeModal = () => setIsOpen(false);
+  const openModal = () => setIsOpen(true);
+  const onChangeHandler = (event: ChangeEvent<HTMLInputElement>) => {
+    const {value, name} = event.target
+    setProduct({...product, [name]: value})
+  };
 
   /* ----------RENDERS---------- */
   const renderProductList = productList.map((product) => {
@@ -31,7 +44,7 @@ const App = ({}: IProps) => {
         <label htmlFor={id} className="text-md my-1">
           {label}
         </label>
-        <Input id={id} name={name} type={type} />
+        <Input id={id} name={name} type={type} onChange={onChangeHandler} />
         {/* <input className="border rounded-sm border-gray-300" type={type} name={name} id={id} /> */}
       </div>
     );
