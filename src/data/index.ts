@@ -240,3 +240,17 @@ export const formInputList: IFormInput[] = [
     type: "string",
   },
 ];
+
+export const colors = [
+  // "#000000", // Black - Classic and versatile
+  // "#FFFFFF", // White - Clean and minimal
+  "#C0C0C0", // Silver - Premium and modern
+  "#8B4513", // Saddle Brown - Leather/Tan
+  "#FF5733", // Red-Orange - Bold and attention-grabbing
+  "#3498DB", // Sky Blue - Fresh and calming
+  "#27AE60", // Emerald Green - Natural and eco-friendly
+  "#E74C3C", // Bright Red - Passionate and energetic
+  "#F1C40F", // Yellow - Vibrant and cheerful
+  "#A569BD", // Purple - Elegant and luxurious
+];
+
